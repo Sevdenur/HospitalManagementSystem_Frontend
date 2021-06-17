@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row mt-2">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Doctor</span>
+            <button type="button" class="btn btn-primary" routerLink="/add-doctor" routerLinkActive="active">Add Doctor</button>
+            </div>
+        </nav>
+    </div>
+</div>
+<table *ngIf="dataLoaded==true" class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let doctor of doctors">
+            <td>{{doctor.id}}</td>        
+            <td>{{doctor.firstName}}</td>
+            <td>{{doctor.lastName}}</td>
+            <div>
+                <button type="button" class="btn btn-info me-md-2"  routerLink="/update-doctor/{{doctor.id}}" routerLinkActive="active">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="deleteDoctor(doctor)">Delete</button>
+            </div>  
+        </tr>
+    </tbody>
+</table>

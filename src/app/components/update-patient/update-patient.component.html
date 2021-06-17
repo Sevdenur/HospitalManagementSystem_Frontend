@@ -1,0 +1,42 @@
+
+<div class="container">
+    <div class="row mt-2">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Patient</span>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="container">
+    <form [formGroup]="updatePatientForm">
+       <div class="form-group">
+           <input type="hidden" asp-for="patient.id">
+           <div class="mb-3">
+               <input type="text"
+               id="firstName"
+               formControlName="firstName"
+               class="form-control"
+               placeholder="First Name">
+           </div>
+           <div class="mb-3">
+               <input type="text"
+               id="LastName"
+               formControlName="lastName"
+               class="form-control"
+               placeholder="Last Name">
+           </div>
+           <div class="mb-3">
+            <input type="text"
+            id="tc_no"
+            formControlName="tc_no"
+            class="form-control"
+            placeholder="TC No">
+            </div>
+           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+               <button class="btn btn-secondary me-md-2" type="button"  routerLink="/patients" routerLinkActive="active">Close</button>
+               <button class="btn btn-primary" type="button" (click)="updatePatient()" routerLink="/patients" routerLinkActive="active">Save</button>
+           </div>
+       </div>
+   </form>
+</div>

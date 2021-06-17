@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row mt-2">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Patient</span>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+    <form [formGroup]="addPatientForm">
+        <div class="mb-3">
+            <label for="firstName">First Name</label>
+            <div class="form-group">
+                <input
+                type="text"
+                id="firstName"
+                formControlName="firstName"
+                class="form-control"
+                placeholder="First Name"/>
+            </div>
+        </div>
+        <div class="mb-3">      
+            <label for="lastName">Last Name</label>
+            <div class="form-group">
+                <input type="text"
+                id="lastName"
+                formControlName="lastName"
+                class="form-control"
+                placeholder="Last Name">
+            </div>
+        </div>
+        <div class="mb-3">      
+            <label for="tc_no">TC No</label>
+            <div class="form-group">
+                <input type="text"
+                id="tc_no"
+                formControlName="tc_no"
+                class="form-control"
+                placeholder="TC No">
+            </div>
+        </div>
+    </form>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-secondary me-md-2" type="button"  routerLink="/patients" routerLinkActive="active">Close</button>
+        <button class="btn btn-primary" type="button" (click)="addPatient()" routerLink="/patients" routerLinkActive="active">Save</button>
+    </div>
+</div>

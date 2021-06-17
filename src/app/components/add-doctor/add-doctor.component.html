@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row mt-2">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Doctor</span>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="container">
+    <form [formGroup]="addDoctorForm">
+        <div class="mb-3">
+            <label for="firstName">First Name</label>
+            <div class="form-group">
+                <input
+                type="text"
+                id="firstName"
+                formControlName="firstName"
+                class="form-control"
+                placeholder="First Name"/>
+            </div>
+        </div>
+        <div class="mb-3">      
+            <label for="lastName">Last Name</label>
+            <div class="form-group">
+                <input type="text"
+                id="lastName"
+                formControlName="lastName"
+                class="form-control"
+                placeholder="Last Name">
+            </div>
+        </div>
+    </form>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-secondary me-md-2" type="button"  routerLink="/doctors" routerLinkActive="active">Close</button>
+        <button class="btn btn-primary" type="button" (click)="addDoctor()" routerLink="/doctors" routerLinkActive="active">Save</button>
+    </div>
+</div>
+

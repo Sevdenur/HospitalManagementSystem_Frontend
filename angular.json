@@ -24,9 +24,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/ngx-toastr/toastr.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +122,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "hospitalManagementSystem"
+    }
+  },
+  "defaultProject": "hospitalManagementSystem",
+  "cli": {
+    "analytics": "e13c12c4-a619-44ea-a88a-d1a8f37f8990"
+  }
 }

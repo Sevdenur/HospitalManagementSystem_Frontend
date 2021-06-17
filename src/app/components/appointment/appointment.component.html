@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row mt-2">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Appointment</span>
+            <button type="button" class="btn btn-primary" routerLink="/add-appointment" routerLinkActive="active">Add Appointment</button>
+            </div>
+        </nav>
+    </div>
+</div>
+<table *ngIf="dataLoaded==true" class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Patient Name</th>
+            <th scope="col">Doctor Name</th>           
+            <th scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let appointment of appointments">
+            <td>{{appointment.appointmentId}}</td>
+            <td>{{appointment.patientName}}</td>
+            <td>{{appointment.doctorName}}</td>           
+            <td>{{appointment.date}}</td>
+            <div>               
+                <button type="button" class="btn btn-danger" (click)="deleteAppointment(appointment)" >Delete</button>
+            </div>  
+        </tr>
+    </tbody>
+</table>
+

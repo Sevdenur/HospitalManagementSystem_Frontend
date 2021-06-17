@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row mt-2">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Patient</span>
+                <button type="button" class="btn btn-primary" routerLink="/add-patient" routerLinkActive="active">Add Patient</button>               
+            </div>
+        </nav>
+    </div>
+</div>
+<table *ngIf="dataLoaded==true" class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">TC No</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let patient of patients">
+            <td>{{patient.id}}</td>
+            <td>{{patient.tc_no}}</td>
+            <td>{{patient.firstName}}</td>
+            <td>{{patient.lastName}}</td>
+            <div>
+                <button type="button" class="btn btn-info me-md-2" routerLink="/update-patient/{{patient.id}}" routerLinkActive="active">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="deletePatient(patient)">Delete</button>  
+            </div> 
+        </tr>
+    </tbody>
+</table>
